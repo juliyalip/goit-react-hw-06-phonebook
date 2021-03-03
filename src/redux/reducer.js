@@ -26,6 +26,7 @@ const contactsReduser = (state = [
 const filterReduser = (state = '', {type, payload}) => {
     switch (type) {
         case types.CHANGE_FILTER:
+            
             return payload  // вернем новое значение
         
         

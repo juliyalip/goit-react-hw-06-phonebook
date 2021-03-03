@@ -24,9 +24,9 @@ export const changleFilter = name => ({
     payload: name
 })
 
-//export const chekUnigue = unicueName =>( {
-  //  type: types.CHECK_UNIGUE,
-    //    payload: unicueName
-// } )
+export const chekUnigue = unicueName =>( {
+  type: types.CHECK_UNIGUE,
+    payload: unicueName
+} )
 
     

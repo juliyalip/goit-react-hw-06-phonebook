@@ -6,6 +6,9 @@ import * as actions from '../redux/contact-action'
 
 import s from "./form.module.css";
 
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
  class Form extends Component {
   state = {
     name: "",
@@ -32,7 +35,7 @@ import s from "./form.module.css";
     const { name, number } = this.state;
     const { onAdd } = this.props;
     //const isValedeForm = this.validateForm();
-   //if (!isValedeForm) return;
+  // if (!isValedeForm) return;
     onAdd({ id: shortid.generate(), name, number });
     this.reset();
   };
@@ -48,16 +51,21 @@ import s from "./form.module.css";
     return onCheckUnigue(name);
   };
 
+     
   reset = () => {
     this.setState({
       name: "",
       number: "",
   
     });
-  };
+   };
+   
+
+
 
   render() {
     const { name, number } = this.state;
+ 
 
     return (
       <form onSubmit={this.handleFormSubmit} className={s.form}>
@@ -92,6 +100,8 @@ import s from "./form.module.css";
 
 const mapDispatchToProps = dispatch => ({
   onAdd: (newContact) => dispatch(actions.addContact(newContact)),
+  onCheckUnigue: (value) => dispatch(actions.chekUnigue(value))
+
 
 })
 
