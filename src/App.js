@@ -34,11 +34,7 @@ export default class App extends Component {
    // }
  // }
 
- // handleAddContact = (newContact) => {
-  //  this.setState(({ contacts }) => ({
-  //    contacts: [...contacts, newContact],
-  //  }));
-//  };
+
 
   //handleCheckUnicue = (name) => {
    // const { contacts } = this.state;

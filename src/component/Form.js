@@ -34,21 +34,21 @@ import 'react-toastify/dist/ReactToastify.css';
     e.preventDefault();
     const { name, number } = this.state;
     const { onAdd } = this.props;
-    //const isValedeForm = this.validateForm();
-  // if (!isValedeForm) return;
+   const isValedeForm = this.validateForm();
+   if (!isValedeForm) return;
     onAdd({ id: shortid.generate(), name, number });
     this.reset();
   };
 
   validateForm = () => {
     const { name, number } = this.state;
-    const { onCheckUnigue } = this.props;
+   // const { onCheckUnigue } = this.props;
 
     if (!name || !number) {
       alert("filed is empti");
       return false;
     }
-    return onCheckUnigue(name);
+    return name;
   };
 
      

@@ -42,6 +42,14 @@ Contacts.propTypes = {
   onDelete: PropTypes.func.isRequired,
 };
 
+  //handleCheckUnicue = (name) => {
+   // const { contacts } = this.state;
+   // const duplicete = !!contacts.find((contact) => contact.name === name);
+  //  duplicete && toast.error('contact already  exists')
+
+   // return !duplicete;
+  //};
+
 const mapStateToProps = state => {
   
   const { filter, contacts } = state;

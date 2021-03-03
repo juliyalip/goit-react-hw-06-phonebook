@@ -9,12 +9,15 @@ const contactsReduser = (state = [
 ], { type, payload }) => {
     
     switch (type) {
+     
         case types.ADD:
             return [...state, payload]
         
         case types.DELETE:
             return state.filter(contact => contact.id !== payload)
-              
+        
+      
+                     
           default: return state;
     }
 
