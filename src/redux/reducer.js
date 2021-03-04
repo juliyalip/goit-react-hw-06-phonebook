@@ -16,7 +16,7 @@ const contactsReduser = (state = [
         case types.DELETE:
             return state.filter(contact => contact.id !== payload)
         
-      
+        
                      
           default: return state;
     }

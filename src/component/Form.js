@@ -42,13 +42,15 @@ import 'react-toastify/dist/ReactToastify.css';
 
   validateForm = () => {
     const { name, number } = this.state;
-   // const { onCheckUnigue } = this.props;
-
-    if (!name || !number) {
+       if (!name || !number) {
       alert("filed is empti");
       return false;
     }
-    return name;
+    const contacts = this.props.contacts;
+    if (contacts.some(contact => contact.name === name)) {
+  return toast.error("Контакт уже есть")
+}
+    return true;
   };
 
      
@@ -95,14 +97,17 @@ import 'react-toastify/dist/ReactToastify.css';
   }
 }
 
-
+const mapStateToProps = state => ({
+  contacts: state.contacts
+})
 
 
 const mapDispatchToProps = dispatch => ({
   onAdd: (newContact) => dispatch(actions.addContact(newContact)),
-  onCheckUnigue: (value) => dispatch(actions.chekUnigue(value))
+ 
 
 
 })
 
-export default connect(null, mapDispatchToProps  )(Form)
+export default connect(mapStateToProps, mapDispatchToProps  )(Form)
+
