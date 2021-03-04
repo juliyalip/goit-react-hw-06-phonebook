@@ -4,7 +4,7 @@ import Contacts from "./component/Contacts";
 import Filter from "./component/Filter";
 import Form from "./component/Form";
 
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './component/contact.css'
@@ -72,12 +72,11 @@ export default class App extends Component {
             
             <Contacts />
                     
-          
    {/* </CSSTransition>   
        */}
           
       
-          <ToastContainer autoClose={250} position="top-left"/> 
+          <ToastContainer autoClose={3000} position="top-left"/> 
          
         </div>
       </>
